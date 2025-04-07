@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History Cleaner</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    h1 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 8px 12px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .history-list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-top: 10px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+    .history-item {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    .history-item:last-child {
+      border-bottom: none;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      display: none;
+    }
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    .recent-searches {
+      margin-top: 15px;
+    }
+    .recent-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+    .options-link {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #4285f4;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>History Cleaner</h1>
+    
+    <label for="website">Enter website to clean (e.g., "google.com" or "youtube"):</label>
+    <input type="text" id="website" placeholder="website.com">
+    
+    <div>
+      <label>
+        <input type="checkbox" id="cleanCookies" checked>
+        Clean cookies
+      </label>
+    </div>
+    
+    <div>
+      <label>
+        <input type="checkbox" id="cleanCache" checked>
+        Clean cache
+      </label>
+    </div>
+    
+    <button id="cleanButton">Clean History</button>
+    
+    <div id="status" class="status"></div>
+    
+    <div class="recent-searches">
+      <h3>Recent Cleanups:</h3>
+      <div id="recentList"></div>
+    </div>
+    
+    <a href="#" id="viewHistory" class="options-link">View All History Items</a>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
