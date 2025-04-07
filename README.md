@@ -1,6 +1,6 @@
 # 🧹 History Cleaner Chrome Extension
 
-![History Cleaner Logo](/images/icon128.png)
+![History Cleaner Logo](/HistoryCleaner/images/icon128.png)
 
 ## 📝 Description
 
